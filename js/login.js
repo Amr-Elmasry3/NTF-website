@@ -52,7 +52,7 @@ let arrayOfInfoEmail,arrayOfInfoPassword;
 
 req1.onblur = function (){
 
-  if (window.localStorage.length > 0){
+  if (window.localStorage.getItem("userData")){
     for (let i=0 ; i<arrayOfInfo.length ; i++){
       if(req1.value !== "" && req1.value === arrayOfInfo[i].name){
         reqOne.style.cssText= "border-color: green";
@@ -79,7 +79,7 @@ req1.onblur = function (){
 }
 req2.onblur = function (){
   
-  if (window.localStorage.length > 0){
+  if (window.localStorage.getItem("userData")){
     if(req2.value !== "" && req2.value === arrayOfInfoEmail){
       reqTwo.style.cssText= "border-color: green";
     }
@@ -102,7 +102,7 @@ req2.onblur = function (){
 
 req3.onblur = function (){
 
-  if (window.localStorage.length > 0){
+  if (window.localStorage.getItem("userData")){
     if(req3.value !== "" && req3.value === arrayOfInfoPassword){
       reqThree.style.cssText= "border-color: green";
     }
@@ -122,6 +122,3 @@ req3.onblur = function (){
     }
   }
 }
-
-
-/*   3   */
