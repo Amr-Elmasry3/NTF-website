@@ -13,7 +13,6 @@ show.onclick= function (){
   password.setAttribute("type","password");
 }
 
-
 let button= document.querySelector(".login2");
 
 let reqOne= document.querySelector(".req-one");
@@ -37,7 +36,7 @@ button.onclick= function (){
   // window.localStorage.clear();
 
   if(req1.value !== "" && req2.value !== "" && req3.value !== ""){
-    if (window.localStorage.length > 0){
+    if (window.localStorage.getItem("userData")){
       for(let i=0 ; i<arrayOfInfo.length ; i++){
         if(req1.value !== arrayOfInfo[i].name && req2.value !== arrayOfInfo[i].email && req3.value !== arrayOfInfo[i].password ){
           if(i === arrayOfInfo.length-1){
@@ -110,7 +109,7 @@ span3.appendChild(document.createTextNode("is already used"));
 
 req1.onblur = function (){
 
-  if (window.localStorage.length > 0){
+  if (window.localStorage.getItem("userData")){
     for (let i=0 ; i<arrayOfInfo.length ; i++){
       if (req1.value !== "" && req1.value === arrayOfInfo[i].name){
         span1.style.cssText="display: block ; position: absolute ; top: 74px ; left: 50% ; transform: translate(-50%) ; color: red ; font-size: 14px";
@@ -135,7 +134,7 @@ req1.onblur = function (){
   }
 }
 req2.onblur = function (){
-  if (window.localStorage.length){
+  if (window.localStorage.getItem("userData")){
     for (let i=0 ; i<arrayOfInfo.length ; i++){
       if (req2.value !== "" && req2.value === arrayOfInfo[i].email){
         span2.style.cssText="display: block ; position: absolute ; top: 120px ; left: 50% ; transform: translate(-50%) ; color: red ; font-size: 14px";
@@ -199,6 +198,3 @@ req3.onblur = function (){
     }
   }
 }
-
-/*   3   */
-
